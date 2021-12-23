@@ -59,6 +59,14 @@ export default {
     },
   },
 
+  router: {
+    base: '/speedcubing-cfop-method/'
+  },
+
+  generate: {
+    dir: 'build'
+  },
+
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
 }
