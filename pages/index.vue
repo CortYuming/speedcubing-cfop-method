@@ -2,9 +2,10 @@
   <v-row justify="center" align="center">
     <v-col cols="12">
       <v-text-field
-        v-model="keyword"
+        v-model="keywords"
         label="Search"
         hide-details="auto"
+        clearable
       ></v-text-field>
     </v-col>
     <v-col
@@ -57,21 +58,28 @@ export default {
   },
   computed: {
     filterCubingData(): Array {
+      const _checkKeyword = (cubing, key, keyword): bool => {
+        return cubing[key].toLowerCase().includes(keyword.toLowerCase().trim())
+      }
       const cubingList = [];
+      const keywords = this.keywords ? this.keywords.trim().split(' ') : '';
 
-      if (this.keywords.trim() === '') {
+      if (!keywords.length) {
         return this.cubingData;
       }
 
-      const checkKeyword = (cubing, key, keyword): bool => {
-        return cubing[key].toLowerCase().includes(keyword.toLowerCase().trim())
-      }
-
       this.cubingData.forEach(cubing => {
-        if (checkKeyword(cubing, 'type', this.keywords) || checkKeyword(cubing, 'title', this.keywords)){
-          cubingList.push(cubing)
-        }
+        const isHitList = []
+        keywords.forEach(keyword => {
+          if (_checkKeyword(cubing, 'type', keyword) ||  _checkKeyword(cubing, 'title', keyword)) {
+            isHitList.push(true)
+          }
+          if (keywords.length === isHitList.length) {
+            cubingList.push(cubing)
+          }
+        })
       })
+
       return cubingList;
     },
   },
