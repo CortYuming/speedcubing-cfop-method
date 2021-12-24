@@ -8,6 +8,13 @@
       app
     >
       <v-list>
+        <v-list-item>
+          <v-switch
+            v-model="theme"
+            :prepend-icon="themeIcon"
+          >
+          </v-switch>
+          </v-list-item>
         <v-list-item
           v-for="(item, i) in items"
           :key="i"
@@ -62,7 +69,7 @@
   </v-app>
 </template>
 
-<script>
+<script lang="ts">
 export default {
   name: 'DefaultLayout',
   data() {
@@ -70,6 +77,7 @@ export default {
       clipped: false,
       drawer: false,
       fixed: false,
+      theme: false,
       items: [
         {
           icon: 'mdi-apps',
@@ -88,5 +96,15 @@ export default {
       title: 'Vuetify.js',
     }
   },
+    computed: {
+      themeIcon(): string {
+        return this.theme ? 'mdi-weather-night' : 'mdi-weather-sunny'
+      }
+    },
+    watch: {
+      theme() {
+        this.$vuetify.theme.dark = this.theme
+      }
+    }
 }
 </script>

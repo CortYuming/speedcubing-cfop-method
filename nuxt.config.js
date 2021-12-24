@@ -18,6 +18,13 @@ export default {
       { name: 'format-detection', content: 'telephone=no' },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    script: [
+      {
+        type: 'text/javascript',
+        src: 'js/AnimCube3.js',
+        body: true
+      },
+    ]
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -44,7 +51,7 @@ export default {
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
     theme: {
-      dark: true,
+      dark: false,
       themes: {
         dark: {
           primary: colors.blue.darken2,
