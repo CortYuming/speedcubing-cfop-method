@@ -74,6 +74,7 @@ export default {
   name: 'DefaultLayout',
   data() {
     return {
+      title: 'Speedcubing CFOP Method',
       clipped: false,
       drawer: false,
       fixed: false,
@@ -93,7 +94,6 @@ export default {
       miniVariant: false,
       right: true,
       rightDrawer: false,
-      title: 'Vuetify.js',
     }
   },
     computed: {
