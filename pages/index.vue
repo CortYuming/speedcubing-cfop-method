@@ -1,7 +1,14 @@
 <template>
   <v-row justify="center" align="center">
+    <v-col cols="12">
+      <v-text-field
+        v-model="keyword"
+        label="Search"
+        hide-details="auto"
+      ></v-text-field>
+    </v-col>
     <v-col
-      v-for="cubing, i in cubingData"
+      v-for="cubing, i in filterCubingData"
       :key="i"
       cols="12" sm="6" md="4" lg="3">
       <Cube
@@ -14,11 +21,12 @@
   </v-row>
 </template>
 
-<script>
+<script lang="ts">
 export default {
   name: 'IndexPage',
   data () {
     return {
+      keywords: this.$route.query.s || '',
       cubingData: [
         {
           'type': 'PLL',
@@ -46,6 +54,26 @@ export default {
         },
       ]
     }
-  }
+  },
+  computed: {
+    filterCubingData(): Array {
+      const cubingList = [];
+
+      if (this.keywords.trim() === '') {
+        return this.cubingData;
+      }
+
+      const checkKeyword = (cubing, key, keyword): bool => {
+        return cubing[key].toLowerCase().includes(keyword.toLowerCase().trim())
+      }
+
+      this.cubingData.forEach(cubing => {
+        if (checkKeyword(cubing, 'type', this.keywords) || checkKeyword(cubing, 'title', this.keywords)){
+          cubingList.push(cubing)
+        }
+      })
+      return cubingList;
+    },
+  },
 }
 </script>
