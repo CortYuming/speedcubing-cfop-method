@@ -14,7 +14,7 @@
       </div>
     </v-card-text>
     <v-card-subtitle>
-      <p>
+      <p class="grey--text text--darken-4">
         {{ move }}
       </p>
       <v-divider></v-divider>
