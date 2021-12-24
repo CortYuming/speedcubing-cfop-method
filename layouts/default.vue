@@ -11,7 +11,7 @@
         <v-list-item
           v-for="(item, i) in items"
           :key="i"
-          :to="item.to"
+          :href="item.to"
           router
           exact
         >
@@ -52,13 +52,28 @@ export default {
       items: [
         {
           icon: 'mdi-apps',
-          title: 'Welcome',
+          title: 'Top',
           to: '/',
         },
         {
-          icon: 'mdi-chart-bubble',
-          title: 'Inspire',
-          to: '/inspire',
+          icon: 'mdi-border-none-variant',
+          title: 'PLL',
+          to: '/?s=PLL',
+        },
+        {
+          icon: 'mdi-border-none-variant',
+          title: 'OLL',
+          to: '/?s=OLL',
+        },
+        {
+          icon: 'mdi-border-none-variant',
+          title: 'F2L',
+          to: '/?s=F2L',
+        },
+        {
+          icon: 'mdi-border-none-variant',
+          title: 'CROSS',
+          to: '/?s=CROSS',
         },
       ],
       miniVariant: false,

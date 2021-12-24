@@ -24,7 +24,7 @@
 
 <script lang="ts">
 export default {
-  name: 'IndexPage',
+  name: 'TopPage',
   data () {
     return {
       keywords: this.$route.query.s || '',
