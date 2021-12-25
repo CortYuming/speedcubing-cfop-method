@@ -4,7 +4,6 @@
       <v-row class="mt-1">
         <v-text-field
           v-model="keywords"
-          label="Search"
           hide-details="auto"
           clearable
         ></v-text-field>
