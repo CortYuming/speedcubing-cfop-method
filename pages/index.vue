@@ -140,19 +140,19 @@ export default {
         {
           'type': 'PLL',
           title: '19Gc',
-          move: "R2 U' R U' R U R' U R2 (D' U) R U' R' D",
+          move: "R2 U' R U' R U R' U R2 (D' U) (R U' R') D",
           makePattern: "",
         },
         {
           'type': 'PLL',
           title: '20Gb',
-          move: "R' U' R (U D') R2 U R' U R U' R U' R2 D",
+          move: "(R' U' R) (U D') R2 U R' U R U' R U' R2 D",
           makePattern: "",
         },
         {
           'type': 'PLL',
           title: '21Ga',
-          move: "R2 U R' U R' U' R U' R2 (D U') R' U R D'",
+          move: "R2 U R' U R' U' R U' R2 (D U') (R' U R) D'",
           makePattern: "",
         },
       ]
