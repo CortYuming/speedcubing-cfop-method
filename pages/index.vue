@@ -10,6 +10,7 @@
               hide-details="auto"
               clearable
               @keyup.enter="search"
+              @click:clear="clearSearch"
             ></v-text-field>
             <v-spacer/>
           </v-row>
@@ -200,8 +201,10 @@ export default {
         return
       }
       this.$router.push({path: "?s="+this.keywords})
-    }
+    },
+    clearSearch() {
+      this.$router.push({path: '/'})
+    },
   }
-
 }
 </script>
