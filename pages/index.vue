@@ -173,7 +173,7 @@ export default {
         return cubing[key].toLowerCase().includes(keyword.toLowerCase().trim())
       }
       const cubingList =  [] ;
-      const keywords = this.$route.query.s ? this.$route.query.s.trim().split(' ') : '';
+      const keywords = this.$route.query.s ? String(this.$route.query.s).trim().split(' ') : [];
 
       if (!keywords.length) {
         return this.cubingData;
@@ -196,7 +196,7 @@ export default {
   },
   methods: {
     search() {
-      if (!this.keywords || (this.keywords && !this.keywords.trim())) {
+      if (!this.keywords || (this.keywords && !String(this.keywords).trim())) {
         this.$router.push({path: '/'})
         return
       }
