@@ -25,33 +25,135 @@
 <script lang="ts">
 export default {
   name: 'TopPage',
-  data () {
+  data(): any { // TODO: Type check
     return {
       keywords: this.$route.query.s || '',
       cubingData: [
         {
           'type': 'PLL',
-          title: '01 Ub',
+          title: '01Ub',
           move: "M2' U' M U2' M' U' M2'",
           makePattern: "(M2' U' M U2' M' U' M2') *2",
         },
         {
           'type': 'PLL',
-          title: '02 Ua',
-          move: "M2' U' M2' U' M' U2' M2' U2' M' U2",
-          makePattern: "(M2' U' M2' U' M' U2' M2' U2' M' U2') *2",
+          title: '02Ua',
+          move: "M2' U M U2 M' U M2'",
+          makePattern: "(M2' U M U2 M' U M2') *2",
         },
         {
           'type': 'PLL',
-          title: '03 H',
+          title: '03H',
           move: "M2' U' M2' U2' M2' U' M2'",
           makePattern: "M2' U' M2' U2' M2' U' M2'",
         },
         {
           'type': 'PLL',
-          title: '04 Ab',
+          title: '04Ab',
           move: "x (L U' L) D2 (L' U L) D2 L2 x'",
           makePattern: "(x (L U' L) D2 (L' U L) D2 L2 x') *2",
+        },
+        {
+          'type': 'PLL',
+          title: '05Aa',
+          move: "x L2' D2 (L' U' L) D2 (L' U L') x'",
+          makePattern: "(x L2' D2 (L' U' L) D2 (L' U L') x') *2",
+        },
+        {
+          'type': 'PLL',
+          title: '06T',
+          move: "(R U R' U') R' F R2 U' R' U' (R U R') F'",
+          makePattern: "(R U R' U') R' F R2 U' R' U' (R U R') F'",
+        },
+        {
+          'type': 'PLL',
+          title: '07Nb',
+          move: "(L' U R' U2 L U' R) (L' U R' U2 L U' R) U'",
+          makePattern: "((L' U R' U2 L U' R) (L' U R' U2 L U' R) U') *2",
+        },
+        {
+          'type': 'PLL',
+          title: '08Na',
+          move: "(R U' L U2' R' U L') (R U' L U2' R' U L') U",
+          makePattern: "(R U' L U2' R' U L') (R U' L U2' R' U L') U",
+        },
+        {
+          'type': 'PLL',
+          title: '09Z',
+          move: "(M2' U') (M2' U') M' (U2' M2' U2') M' U2'",
+          makePattern: "(M2' U') (M2' U') M' (U2' M2' U2') M' U2'",
+        },
+        {
+          'type': 'PLL',
+          title: '10E',
+          move: "x' (L' U L D') (L' U' L D) (L' U' L D') (L' U L D) x",
+          makePattern: "x' (L' U L D') (L' U' L D) (L' U' L D') (L' U L D) x",
+        },
+        {
+          'type': 'PLL',
+          title: '11V',
+          move: "(R' U R U') (R' f' U' R) U2' (R' U' R U') R' f R",
+          makePattern: "(R' U R U') (R' f' U' R) U2' (R' U' R U') R' f R",
+        },
+        {
+          'type': 'PLL',
+          title: '12F',
+          move: "R' U' F' (R U R' U') R' F R2 (U' R' U') (R U R') U R",
+          makePattern: "R' U' F' (R U R' U') R' F R2 (U' R' U') (R U R') U R",
+        },
+        {
+          'type': 'PLL',
+          title: '13Rb',
+          move: "R2 F R (U R U' R') F' R U2' R' U2' R U",
+          makePattern: "R2 F R (U R U' R') F' R U2' R' U2' R U",
+        },
+        {
+          'type': 'PLL',
+          title: '14Ra',
+          move: "(R U' R' U') (R U R D) (R' U' R D') (R' U2' R') U'",
+          makePattern: "(R U' R' U') (R U R D) (R' U' R D') (R' U2' R') U'",
+        },
+        {
+          'type': 'PLL',
+          title: '15Jb',
+          move: "(R U R') F' (R U R' U') R' F R2 U' R' U'",
+          makePattern: "(R U R') F' (R U R' U') R' F R2 U' R' U'",
+        },
+        {
+          'type': 'PLL',
+          title: '16Ja',
+          move: "(L' U' L) F (L' U' L U) L F' L2' U L U",
+          makePattern: "(L' U' L) F (L' U' L U) L F' L2' U L U",
+        },
+        {
+          'type': 'PLL',
+          title: '17Y',
+          move: "F (R U' R' U') (R U R') F' (R U R' U') (R' F R F')",
+          makePattern: "F (R U' R' U') (R U R') F' (R U R' U') (R' F R F')",
+        },
+        {
+          'type': 'PLL',
+          title: '18Gd',
+          move: "(R U R') (U' D) R2 U' R U' R' U R' U R2 D'",
+          makePattern: "",
+        },
+        {
+          'type': 'PLL',
+          title: '19Gc',
+          move: "R2 U' R U' R U R' U R2 (D' U) R U' R' D",
+          makePattern: "",
+        },
+        {
+          'type': 'PLL',
+          title: '20Gb',
+          move: "R' U' R (U D') R2 U R' U R U' R U' R2 D",
+          makePattern: "",
+        },
+        {
+          'type': 'PLL',
+          title: '21Ga',
+          move: "R2 U R' U R' U' R U' R2 (D U') R' U R D'",
+          makePattern: "",
         },
       ]
     }
