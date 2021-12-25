@@ -1,16 +1,20 @@
 <template>
   <v-row justify="center" align="center">
     <v-col cols="12">
-      <v-form @submit.prevent>
-        <v-row class="mt-1">
-          <v-text-field
-            v-model="keywords"
-            hide-details="auto"
-            clearable
-          ></v-text-field>
-          <v-btn ref="submit" type='submit' :to="keywords? `?s=${keywords}`: '/'"> Search </v-btn>
-        </v-row>
-      </v-form>
+      <v-container>
+        <v-form @submit.prevent>
+          <v-row>
+            <v-text-field
+              v-model="keywords"
+              hide-details="auto"
+              clearable
+              class="mr-3"
+            ></v-text-field>
+            <v-btn ref="submit" type='submit' :to="keywords? `?s=${keywords}`: '/'"> Search </v-btn>
+            <v-spacer/>
+          </v-row>
+        </v-form>
+      </v-container>
     </v-col>
     <v-col
       v-for="cubing in filterCubingData"
