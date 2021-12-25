@@ -1,12 +1,15 @@
 <template>
   <v-row justify="center" align="center">
     <v-col cols="12">
-      <v-text-field
-        v-model="keywords"
-        label="Search"
-        hide-details="auto"
-        clearable
-      ></v-text-field>
+      <v-row class="mt-1">
+        <v-text-field
+          v-model="keywords"
+          label="Search"
+          hide-details="auto"
+          clearable
+        ></v-text-field>
+        <v-btn :href="'?s='+keywords"> Search </v-btn>
+      </v-row>
     </v-col>
     <v-col
       v-for="cubing, i in filterCubingData"
