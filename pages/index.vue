@@ -22,10 +22,10 @@
   </v-row>
 </template>
 
-<script lang="ts">
+<script>
 export default {
   name: 'TopPage',
-  data(): any { // TODO: Type check
+  data() {
     return {
       keywords: this.$route.query.s || '',
       cubingData: [
@@ -159,11 +159,11 @@ export default {
     }
   },
   computed: {
-    filterCubingData(): Array {
-      const _checkKeyword = (cubing, key, keyword): bool => {
+    filterCubingData() {
+      const _checkKeyword = (cubing, key, keyword) => {
         return cubing[key].toLowerCase().includes(keyword.toLowerCase().trim())
       }
-      const cubingList = [];
+      const cubingList =  [] ;
       const keywords = this.keywords ? this.keywords.trim().split(' ') : '';
 
       if (!keywords.length) {
