@@ -1,18 +1,20 @@
 <template>
   <v-row justify="center" align="center">
     <v-col cols="12">
-      <v-row class="mt-1">
-        <v-text-field
-          v-model="keywords"
-          hide-details="auto"
-          clearable
-        ></v-text-field>
-        <v-btn :href="'?s='+keywords"> Search </v-btn>
-      </v-row>
+      <v-form @submit.prevent>
+        <v-row class="mt-1">
+          <v-text-field
+            v-model="keywords"
+            hide-details="auto"
+            clearable
+          ></v-text-field>
+          <v-btn ref="submit" type='submit' :to="keywords? '?s='+keywords: '/'"> Search </v-btn>
+        </v-row>
+      </v-form>
     </v-col>
     <v-col
-      v-for="cubing, i in filterCubingData"
-      :key="i"
+      v-for="cubing in filterCubingData"
+      :key="cubing.title"
       cols="12" sm="6" md="4" lg="3">
       <Cube
         :type="cubing.type"
@@ -166,7 +168,7 @@ export default {
         return cubing[key].toLowerCase().includes(keyword.toLowerCase().trim())
       }
       const cubingList =  [] ;
-      const keywords = this.keywords ? this.keywords.trim().split(' ') : '';
+      const keywords = this.$route.query.s ? this.$route.query.s.trim().split(' ') : '';
 
       if (!keywords.length) {
         return this.cubingData;
