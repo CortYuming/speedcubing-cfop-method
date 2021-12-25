@@ -53,28 +53,28 @@ export default {
         {
           icon: 'mdi-apps',
           title: 'Top',
-          to: '/',
+          to: '/speedcubing-cfop-method/',
         },
         {
           icon: 'mdi-border-none-variant',
           title: 'PLL',
-          to: '/?s=PLL',
+          to: '/speedcubing-cfop-method/?s=PLL',
         },
-        {
-          icon: 'mdi-border-none-variant',
-          title: 'OLL',
-          to: '/?s=OLL',
-        },
-        {
-          icon: 'mdi-border-none-variant',
-          title: 'F2L',
-          to: '/?s=F2L',
-        },
-        {
-          icon: 'mdi-border-none-variant',
-          title: 'CROSS',
-          to: '/?s=CROSS',
-        },
+        // {
+        //   icon: 'mdi-border-none-variant',
+        //   title: 'OLL',
+        //   to: '/speedcubing-cfop-method/?s=OLL',
+        // },
+      // {
+        //   icon: 'mdi-border-none-variant',
+        //   title: 'F2L',
+        //   to: '/speedcubing-cfop-method/?s=F2L',
+        // },
+      // {
+        //   icon: 'mdi-border-none-variant',
+        //   title: 'CROSS',
+        //   to: '/speedcubing-cfop-method/?s=CROSS',
+        // },
       ],
       miniVariant: false,
     }

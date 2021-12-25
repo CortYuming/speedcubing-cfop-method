@@ -8,7 +8,7 @@
             hide-details="auto"
             clearable
           ></v-text-field>
-          <v-btn ref="submit" type='submit' :to="keywords? '?s='+keywords: '/'"> Search </v-btn>
+          <v-btn ref="submit" type='submit' :to="keywords? `?s=${keywords}`: '/'"> Search </v-btn>
         </v-row>
       </v-form>
     </v-col>
