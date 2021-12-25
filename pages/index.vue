@@ -6,11 +6,11 @@
           <v-row>
             <v-text-field
               v-model="keywords"
+              placeholder="Search"
               hide-details="auto"
               clearable
-              class="mr-3"
+              @keyup.enter="search"
             ></v-text-field>
-            <v-btn ref="submit" type='submit' :to="keywords? `?s=${keywords}`: '/'"> Search </v-btn>
             <v-spacer/>
           </v-row>
         </v-form>
@@ -193,5 +193,15 @@ export default {
       return cubingList;
     },
   },
+  methods: {
+    search() {
+      if (!this.keywords || (this.keywords && !this.keywords.trim())) {
+        this.$router.push({path: '/'})
+        return
+      }
+      this.$router.push({path: "?s="+this.keywords})
+    }
+  }
+
 }
 </script>
