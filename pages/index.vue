@@ -22,7 +22,7 @@
       :key="cubing.id"
       cols="12" sm="6" md="4" lg="3">
       <Cube
-        :type="cubing.type"
+        :category="cubing.category"
         :title="cubing.title"
         :move="cubing.move"
         :make-pattern="cubing.makePattern"
@@ -57,7 +57,7 @@ export default {
       this.cubingData.forEach(cubing => {
         const isHitList = []
         keywords.forEach(keyword => {
-          if (_checkKeyword(cubing, 'type', keyword) ||  _checkKeyword(cubing, 'title', keyword)) {
+          if (_checkKeyword(cubing, 'category', keyword) ||  _checkKeyword(cubing, 'title', keyword)) {
             isHitList.push(true)
           }
           if (keywords.length === isHitList.length) {
@@ -85,7 +85,7 @@ export default {
         const values = textList.split('\t').map(s => s.trim())
         return {
           id: i,
-          'type': values[0],
+          category: values[0],
           title: values[1],
           move: values[2],
           makePattern: values[3],
