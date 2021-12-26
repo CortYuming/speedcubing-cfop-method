@@ -19,7 +19,7 @@
     </v-col>
     <v-col
       v-for="cubing in filterCubingData"
-      :key="cubing.title"
+      :key="cubing.id"
       cols="12" sm="6" md="4" lg="3">
       <Cube
         :type="cubing.type"
@@ -32,7 +32,7 @@
 </template>
 
 <script>
-import {cubingList} from '~/cubingData.ts'
+import {CUBING_LIST} from '~/cubingData.ts'
 
 export default {
   name: 'TopPage',
@@ -80,18 +80,16 @@ export default {
     clearSearch() {
       this.$router.push({path: '/'})
     },
-    readCubingList(textList) {
-      const values = textList.split('\t').map(s => s.trim())
-      return {
-        'type': values[0],
-        title: values[1],
-        move: values[2],
-        makePattern: values[3],
-      }
-    },
     getCubingData() {
-      return cubingList.map(textList => {
-        return this.readCubingList(textList)
+      return CUBING_LIST.map((textList, i) => {
+        const values = textList.split('\t').map(s => s.trim())
+        return {
+          id: i,
+          'type': values[0],
+          title: values[1],
+          move: values[2],
+          makePattern: values[3],
+        }
       })
     }
   },

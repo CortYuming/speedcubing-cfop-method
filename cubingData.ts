@@ -1,4 +1,4 @@
-export const cubingList = [
+export const CUBING_LIST = [
   "PLL	01Ub	M2' U' M U2' M' U' M2'	(M2' U' M U2' M' U' M2') *2",
   "PLL	02Ua	M2' U M U2 M' U M2'	(M2' U M U2 M' U M2') *2",
   "PLL	03H	M2' U' M2' U2' M2' U' M2'	M2' U' M2' U2' M2' U' M2'",
