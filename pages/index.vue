@@ -32,7 +32,7 @@
 </template>
 
 <script>
-import {CUBING_LIST} from '~/cubingData.ts'
+import {CUBING_LIST} from '~/cubingData'
 
 export default {
   name: 'TopPage',
