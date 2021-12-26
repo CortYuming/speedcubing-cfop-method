@@ -31,24 +31,50 @@
   </v-row>
 </template>
 
-<script>
-import {CUBING_DATA} from '~/cubingData'
+<script lang="ts">
+import Vue from 'vue';
+import { CUBING_DATA } from '../cubingData'
 
-export default {
-  name: 'TopPage',
-  data() {
+interface Cubing {
+  id: number
+  category: string
+  title: string
+  move: string
+  makePattern: string
+}
+interface CubingData {
+  keywords: string
+  cubingData: Cubing[]
+}
+
+const getCubingData = (data: string[]): any =>  {
+  return data.map((line:string, i:number): Cubing => {
+    const values:any = line.split('\t').map((s:any) => (s.trim()))
     return {
-      keywords: this.$route.query.s || '',
-      cubingData: this.getCubingData()
+      id: i,
+      category: values[0],
+      title: values[1],
+      move: values[2],
+      makePattern: values[3],
+    }
+  })
+}
+
+export default Vue.extend({
+  name: 'TopPage',
+  data():CubingData {
+    return {
+      keywords: this.$route.query.query && String(this.$route.query.s) || '',
+      cubingData: getCubingData(CUBING_DATA)
     }
   },
   computed: {
-    filterCubingData() {
-      const _checkKeyword = (cubing, key, keyword) => {
-        return cubing[key].toLowerCase().includes(keyword.toLowerCase().trim())
+    filterCubingData(): Cubing[] {
+      const _checkKeyword = (cubing:Cubing, key:keyof Cubing, keyword:string):boolean => {
+        return String(cubing[key]).toLowerCase().includes(keyword.toLowerCase().trim())
       }
-      const cubingList =  [] ;
-      const keywords = this.$route.query.s ? String(this.$route.query.s).trim().split(' ') : [];
+      const cubingData:Cubing[] =  [] ;
+      const keywords:string[] = this.$route.query.s ? String(this.$route.query.s).trim().split(' ') : [];
 
       if (!keywords.length) {
         return this.cubingData;
@@ -61,12 +87,12 @@ export default {
             isHitList.push(true)
           }
           if (keywords.length === isHitList.length) {
-            cubingList.push(cubing)
+            cubingData.push(cubing)
           }
         })
       })
 
-      return cubingList;
+      return cubingData;
     },
   },
   methods: {
@@ -80,18 +106,6 @@ export default {
     clearSearch() {
       this.$router.push({path: '/'})
     },
-    getCubingData() {
-      return CUBING_DATA.map((line, i) => {
-        const values = line.split('\t').map(s => s.trim())
-        return {
-          id: i,
-          category: values[0],
-          title: values[1],
-          move: values[2],
-          makePattern: values[3],
-        }
-      })
-    }
   },
-}
+})
 </script>
