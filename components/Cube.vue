@@ -14,9 +14,7 @@
       </div>
     </v-card-text>
     <v-card-subtitle>
-      <p class="grey--text text--darken-4">
-        {{ move }}
-      </p>
+      <p class="grey--text text--darken-4" v-html="replaceMove"/>
       <v-divider></v-divider>
       <p v-if="makePattern">
         make pattern <br/>
@@ -48,5 +46,22 @@ export default {
       default: "",
     },
   },
+  computed: {
+    replaceMove() {
+      let move = this.move
+      const replaceStrongList = [
+        "(R U R' U')",
+        "(R U R')",
+        "(L' U' L U)",
+        "(L' U' L)",
+      ]
+
+      replaceStrongList.forEach(word => {
+        move = move.replace(word, `<strong class="red--text text--lighten-1">${word}</strong>`)
+      })
+      /* return this.move.replace("R U R' U'", "<strong class=\"red--text text--lighten-1\">R U R' U'</strong>") */
+      return move
+    }
+  }
 }
 </script>
