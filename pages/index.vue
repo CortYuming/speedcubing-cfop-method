@@ -32,7 +32,7 @@
 </template>
 
 <script>
-import {CUBING_LIST} from '~/cubingData'
+import {CUBING_DATA} from '~/cubingData'
 
 export default {
   name: 'TopPage',
@@ -81,8 +81,8 @@ export default {
       this.$router.push({path: '/'})
     },
     getCubingData() {
-      return CUBING_LIST.map((textList, i) => {
-        const values = textList.split('\t').map(s => s.trim())
+      return CUBING_DATA.map((line, i) => {
+        const values = line.split('\t').map(s => s.trim())
         return {
           id: i,
           category: values[0],
