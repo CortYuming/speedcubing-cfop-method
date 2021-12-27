@@ -10,7 +10,7 @@
     </v-card-title>
     <v-card-text class="pb-sm-1">
       <div class="mx-auto" style="width:220px; height:240px">
-        <script>AnimCube3("move={{move}}&hint=5&colorscheme={{ colorscheme }}&doublespeed=10{{ initrevmoveOrInitmove }}")</script>
+        <script>AnimCube3("{{ getAnimCube3Data }}")</script>
       </div>
     </v-card-text>
     <v-card-subtitle>
@@ -26,8 +26,16 @@
   </v-card>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import Vue from 'vue';
+
+interface AnimCubeConf {
+  colorscheme: string
+  hint: number
+  doublespeed: number
+}
+
+export default Vue.extend({
   props: {
     category: {
       type: String,
@@ -49,15 +57,18 @@ export default {
       type: String,
       default: "",
     },
-    colorscheme: {
-      type: String,
-      // udfblr
-      // default: "wygbor", // top:w
-      default: "ywgbro", // top:y
+    animCubeConf: {
+     type: Object,
+     default: ():AnimCubeConf => ({
+       // colorscheme: "wygbor", // U:w
+       colorscheme: "ywgbro", // U:y
+       hint: 5,
+       doublespeed: 10,
+     })
     },
   },
   computed: {
-    replaceMove() {
+    replaceMove():string {
       let move = this.move
       const replaceStrongList = [
         "(R U R' U')",
@@ -71,12 +82,10 @@ export default {
       })
       return move
     },
-    initrevmoveOrInitmove() {
-      if (this.initmove === "") {
-        return '&initrevmove=#'
-      }
-      return `&initmove=${this.initmove}`
-    }
+    getAnimCube3Data():string {
+      const initrevmoveOrInitmove = this.initmove === "" ? 'initrevmove=#' : `initmove=${this.initmove}`
+      return `move=${this.move}&${initrevmoveOrInitmove }&colorscheme=${this.animCubeConf.colorscheme}&hint=${this.animCubeConf.hint}&doublespeed=${this.animCubeConf.doublespeed}`
+    },
   }
-}
+})
 </script>
