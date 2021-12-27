@@ -10,7 +10,7 @@
     </v-card-title>
     <v-card-text class="pb-sm-1">
       <div class="mx-auto" style="width:220px; height:240px">
-        <script>AnimCube3("move={{move}}&initrevmove=#&hint=5&colorscheme=wygbor")</script>
+        <script>AnimCube3("move={{move}}&initrevmove=#&hint=5&colorscheme={{ colorscheme }}")</script>
       </div>
     </v-card-text>
     <v-card-subtitle>
@@ -44,6 +44,12 @@ export default {
     makePattern: {
       type: String,
       default: "",
+    },
+    colorscheme: {
+      type: String,
+      // tdfblr
+      // default: "wygbor", // top:w
+      default: "ywgbro", // top:y
     },
   },
   computed: {
