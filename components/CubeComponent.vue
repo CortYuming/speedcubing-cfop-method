@@ -37,6 +37,8 @@
 <script lang="ts">
 import Vue from 'vue';
 
+import { CONSTANTS } from '../constants'
+
 interface AnimCubeConf {
   colorscheme: string
   hint: number
@@ -95,13 +97,8 @@ export default Vue.extend({
       return `move=${this.move}&${initrevmoveOrInitmove }&colorscheme=${this.animCubeConf.colorscheme}&hint=${this.animCubeConf.hint}&doublespeed=${this.animCubeConf.doublespeed}`
     },
     getCtegoryIconName():string {
-      const categoryIconNames = {
-        PLL: 'mdi-border-all',
-        OLL: 'mdi-border-top',
-        F2L: 'mdi-border-horizontal',
-        CROSS: 'mdi-border-bottom',
-      }
-      return categoryIconNames[this.category]
+
+      return CONSTANTS.CATEGORY_ICON_NAMES[this.category]
     }
   }
 })

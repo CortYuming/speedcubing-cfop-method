@@ -40,6 +40,8 @@
 </template>
 
 <script lang="ts">
+  import { CONSTANTS } from '../constants'
+
 export default {
   name: 'DefaultLayout',
   data() {
@@ -51,27 +53,27 @@ export default {
       theme: false,
       items: [
         {
-          icon: 'mdi-apps',
-          title: 'Top',
+          icon: CONSTANTS.CATEGORY_ICON_NAMES.ALL,
+          title: 'All',
           to: '/',
         },
         {
-          icon: 'mdi-border-all',
+          icon: CONSTANTS.CATEGORY_ICON_NAMES.PLL,
           title: 'PLL',
           to: '?s=PLL',
         },
         {
-          icon: 'mdi-border-top',
+          icon: CONSTANTS.CATEGORY_ICON_NAMES.OLL,
           title: 'OLL',
           to: '?s=OLL',
         },
         {
-          icon: 'mdi-border-horizontal',
+          icon: CONSTANTS.CATEGORY_ICON_NAMES.F2L,
           title: 'F2L',
           to: '?s=F2L',
         },
         {
-          icon: 'mdi-border-bottom',
+          icon: CONSTANTS.CATEGORY_ICON_NAMES.CROSS,
           title: 'CROSS',
           to: '?s=CROSS',
         },
