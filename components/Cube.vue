@@ -10,7 +10,7 @@
     </v-card-title>
     <v-card-text class="pb-sm-1">
       <div class="mx-auto" style="width:220px; height:240px">
-        <script>AnimCube3("move={{move}}&initrevmove=#&hint=5&colorscheme={{ colorscheme }}&doublespeed=10")</script>
+        <script>AnimCube3("move={{move}}&hint=5&colorscheme={{ colorscheme }}&doublespeed=10{{ initrevmoveOrInitmove }}")</script>
       </div>
     </v-card-text>
     <v-card-subtitle>
@@ -45,9 +45,13 @@ export default {
       type: String,
       default: "",
     },
+    initmove: {
+      type: String,
+      default: "",
+    },
     colorscheme: {
       type: String,
-      // tdfblr
+      // udfblr
       // default: "wygbor", // top:w
       default: "ywgbro", // top:y
     },
@@ -65,8 +69,13 @@ export default {
       replaceStrongList.forEach(word => {
         move = move.replace(word, `<strong class="red--text text--lighten-1">${word}</strong>`)
       })
-      /* return this.move.replace("R U R' U'", "<strong class=\"red--text text--lighten-1\">R U R' U'</strong>") */
       return move
+    },
+    initrevmoveOrInitmove() {
+      if (this.initmove === "") {
+        return '&initrevmove=#'
+      }
+      return `&initmove=${this.initmove}`
     }
   }
 }

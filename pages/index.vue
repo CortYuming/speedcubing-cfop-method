@@ -26,6 +26,7 @@
         :title="cubing.title"
         :move="cubing.move"
         :make-pattern="cubing.makePattern"
+        :initmove="cubing.initmove"
       />
     </v-col>
   </v-row>
@@ -41,6 +42,7 @@ interface Cubing {
   title: string
   move: string
   makePattern: string
+  initmove: string
 }
 interface CubingData {
   keywords: string
@@ -56,6 +58,7 @@ const getCubingData = (data: string[]): any =>  {
       title: values[1],
       move: values[2],
       makePattern: values[3],
+      initmove: values[4],
     }
   })
 }
