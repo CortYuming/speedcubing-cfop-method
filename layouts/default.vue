@@ -11,7 +11,7 @@
         <v-list-item
           v-for="(item, i) in items"
           :key="i"
-          :href="item.to"
+          :to="item.to"
           router
           exact
         >
@@ -53,27 +53,27 @@ export default {
         {
           icon: 'mdi-apps',
           title: 'Top',
-          to: '/speedcubing-cfop-method/',
+          to: '/',
         },
         {
           icon: 'mdi-border-none-variant',
           title: 'PLL',
-          to: '/speedcubing-cfop-method/?s=PLL',
+          to: '?s=PLL',
         },
         {
           icon: 'mdi-border-none-variant',
           title: 'OLL',
-          to: '/speedcubing-cfop-method/?s=OLL',
+          to: '?s=OLL',
         },
       // {
         //   icon: 'mdi-border-none-variant',
         //   title: 'F2L',
-        //   to: '/speedcubing-cfop-method/?s=F2L',
+        //   to: '?s=F2L',
         // },
       // {
         //   icon: 'mdi-border-none-variant',
         //   title: 'CROSS',
-        //   to: '/speedcubing-cfop-method/?s=CROSS',
+        //   to: '?s=CROSS',
         // },
       ],
       miniVariant: false,
