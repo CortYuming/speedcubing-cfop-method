@@ -2,9 +2,13 @@
   <v-card height="100%">
     <v-card-text class="pb-sm-1">
       <div class="ext-subtitle-1">
-        <v-chip outlined label>
+        <v-btn
+          outlined
+          x-small
+          :to="'?s='+category"
+        >
           {{ category }}
-        </v-chip>
+        </v-btn>
       </div>
     </v-card-text>
     <v-card-title class="headline font-weight-black pt-sm-1">
