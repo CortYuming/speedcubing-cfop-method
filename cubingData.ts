@@ -22,6 +22,9 @@ export const CUBING_DATA:string[] = [
   "PLL	20Gb	(R' U' R) (U D') R2 U R' U R U' R U' R2 D	((R' U' R) (U D') R2 U R' U R U' R U' R2 D) *3",
   "PLL	21Ga	R2 U R' U R' U' R U' R2 (D U') (R' U R) D'	(R2 U R' U R' U' R U' R2 (D U') (R' U R) D) *3",
   // OLL
+  // "OLL	Edges:Line	F (R U R' U') F'	F (R U R' U') F'",
+  // "OLL	Edges:L shape	f (R U R' U') f'	(f (R U R' U') f') *2",
+  // "OLL	Edges:Dot	F (R U R' U') F' f (R U R' U') f'	F (R U R' U') F' f (R U R' U') f'",
   "OLL	01	R U2' R' U' (R U R' U') R U' R' 	R U2' R' U' (R U R' U') R U' R' ",
   "OLL	02	R U2' R2 U' R2 U' R2 U2' R	R U2' R2 U' R2 U' R2 U2' R",
   "OLL	03	R' F' R B' R' F R B	(R' F' R B' R' F R B) *2",
@@ -29,4 +32,5 @@ export const CUBING_DATA:string[] = [
   "OLL	05	(R2 D' R) U2' (R' D R) U2' R	((R2 D' R) U2' (R' D R) U2' R) *2",
   "OLL	06	(L' U' L) U' L' U2' L	((L' U' L) U' L' U2' L y`) *2",
   "OLL	07	(R U R') U R U2 R'	((R U R') U R U2 R' y) *2",
+  // "			",
 ];
