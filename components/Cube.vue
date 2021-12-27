@@ -2,7 +2,7 @@
   <v-card height="100%">
     <v-card-text class="pb-sm-1">
       <div class="ext-subtitle-1">
-        {{ type }}
+        {{ category }}
       </div>
     </v-card-text>
     <v-card-title class="headline font-weight-black pt-sm-1">
@@ -29,7 +29,7 @@
 <script>
 export default {
   props: {
-    "type": {
+    category: {
       type: String,
       default: "",
     },
