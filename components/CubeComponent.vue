@@ -5,7 +5,7 @@
         <v-btn
           outlined
           x-small
-          :to="'?s='+category"
+          :href="'?s='+category"
         >
           {{ category }}
         </v-btn>

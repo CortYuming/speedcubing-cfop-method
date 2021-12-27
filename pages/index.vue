@@ -67,7 +67,7 @@ export default Vue.extend({
   name: 'TopPage',
   data():CubingData {
     return {
-      keywords: this.$route.query && String(this.$route.query.s) || '',
+      keywords: this.$route.query.s && String(this.$route.query.s) || '',
       cubingData: getCubingData(CUBING_DATA)
     }
   },
