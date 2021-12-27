@@ -20,6 +20,7 @@
       </div>
     </v-card-text>
     <v-card-subtitle>
+      <!-- eslint-disable-next-line vue/no-v-html -->
       <p class="grey--text text--darken-4" v-html="replaceMove"/>
       <v-divider></v-divider>
       <p v-if="makePattern">

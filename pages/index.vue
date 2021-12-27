@@ -21,7 +21,7 @@
       v-for="cubing in filterCubingData"
       :key="cubing.id"
       cols="12" sm="6" md="4" lg="3">
-      <Cube
+      <CubeComponent
         :category="cubing.category"
         :title="cubing.title"
         :move="cubing.move"
