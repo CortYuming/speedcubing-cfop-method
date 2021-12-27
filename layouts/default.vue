@@ -56,25 +56,25 @@ export default {
           to: '/',
         },
         {
-          icon: 'mdi-border-none-variant',
+          icon: 'mdi-border-all',
           title: 'PLL',
           to: '?s=PLL',
         },
         {
-          icon: 'mdi-border-none-variant',
+          icon: 'mdi-border-top',
           title: 'OLL',
           to: '?s=OLL',
         },
-      // {
-        //   icon: 'mdi-border-none-variant',
-        //   title: 'F2L',
-        //   to: '?s=F2L',
-        // },
-      // {
-        //   icon: 'mdi-border-none-variant',
-        //   title: 'CROSS',
-        //   to: '?s=CROSS',
-        // },
+        {
+          icon: 'mdi-border-horizontal',
+          title: 'F2L',
+          to: '?s=F2L',
+        },
+        {
+          icon: 'mdi-border-bottom',
+          title: 'CROSS',
+          to: '?s=CROSS',
+        },
       ],
       miniVariant: false,
     }

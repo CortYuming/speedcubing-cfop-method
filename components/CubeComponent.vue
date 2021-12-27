@@ -7,6 +7,7 @@
           x-small
           :href="'?s='+category"
         >
+          <v-icon left small>{{ getCtegoryIconName }}</v-icon>
           {{ category }}
         </v-btn>
       </div>
@@ -93,6 +94,15 @@ export default Vue.extend({
       const initrevmoveOrInitmove = this.initmove === "" ? 'initrevmove=#' : `initmove=${this.initmove}`
       return `move=${this.move}&${initrevmoveOrInitmove }&colorscheme=${this.animCubeConf.colorscheme}&hint=${this.animCubeConf.hint}&doublespeed=${this.animCubeConf.doublespeed}`
     },
+    getCtegoryIconName():string {
+      const categoryIconNames = {
+        PLL: 'mdi-border-all',
+        OLL: 'mdi-border-top',
+        F2L: 'mdi-border-horizontal',
+        CROSS: 'mdi-border-bottom',
+      }
+      return categoryIconNames[this.category]
+    }
   }
 })
 </script>
