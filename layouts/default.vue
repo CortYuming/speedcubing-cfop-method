@@ -60,11 +60,11 @@ export default {
           title: 'PLL',
           to: '/speedcubing-cfop-method/?s=PLL',
         },
-        // {
-        //   icon: 'mdi-border-none-variant',
-        //   title: 'OLL',
-        //   to: '/speedcubing-cfop-method/?s=OLL',
-        // },
+        {
+          icon: 'mdi-border-none-variant',
+          title: 'OLL',
+          to: '/speedcubing-cfop-method/?s=OLL',
+        },
       // {
         //   icon: 'mdi-border-none-variant',
         //   title: 'F2L',
