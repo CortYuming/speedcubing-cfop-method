@@ -22,12 +22,12 @@
     </v-card-text>
     <v-card-subtitle>
       <!-- eslint-disable-next-line vue/no-v-html -->
-      <p class="grey--text text--darken-4" v-html="replaceMove"/>
+      <p class="grey--text text--darken-4" v-html="replaceMoveHtml"/>
       <v-divider></v-divider>
-      <p v-if="makePattern">
+      <p v-if="getMakePattern">
         make pattern <br/>
         <span>
-          {{ makePattern }}
+          {{ getMakePattern }}
         </span>
       </p>
     </v-card-subtitle>
@@ -78,28 +78,71 @@ export default Vue.extend({
     },
   },
   computed: {
-    replaceMove():string {
-      let move = this.move
-      const replaceStrongList = [
+    replaceMoveHtml():string {
+      let move:string = String(this.move)
+      const replaceStrongList:string[] = [
         "(R U R' U')",
         "(R U R')",
         "(L' U' L U)",
         "(L' U' L)",
       ]
 
-      replaceStrongList.forEach(word => {
+      move = move.replace('z', '__z')
+
+      replaceStrongList.forEach((word:string) => {
         move = move.replace(word, `<strong class="red--text text--lighten-1">${word}</strong>`)
       })
       return move
     },
     getAnimCube3Data():string {
-      const initrevmoveOrInitmove = this.initmove === "" ? 'initrevmove=#' : `initmove=${this.initmove}`
-      return `move=${this.move}&${initrevmoveOrInitmove }&colorscheme=${this.animCubeConf.colorscheme}&hint=${this.animCubeConf.hint}&doublespeed=${this.animCubeConf.doublespeed}`
+      let move:string = this.move
+      let initmove:string = this.initmove
+      const replaceStrs: { [key: string]: string } = {
+        'z': '__y',
+        'y': '__z',
+        '__z': 'z',
+        '__y': 'y',
+
+      }
+
+      if (move.includes('z') || move.includes('y')) {
+        Object.keys(replaceStrs).forEach((k:string) => {
+          move = move.replace(k, replaceStrs[k])
+        })
+      }
+
+      if (!this.makePattern && !this.initmove) {
+        initmove = this.reverseMove(move)
+      } else if (initmove.includes('z') || initmove.includes('y')) {
+        Object.keys(replaceStrs).forEach(k => {
+          initmove = initmove.replace(k, replaceStrs[k])
+        })
+      }
+
+      const initrevmoveOrInitmove = this.initmove === "" ? 'initrevmove=#' : `initmove=${initmove}`
+      return `move=${move}&${initrevmoveOrInitmove }&colorscheme=${this.animCubeConf.colorscheme}&hint=${this.animCubeConf.hint}&doublespeed=${this.animCubeConf.doublespeed}`
+    },
+    getMakePattern():string {
+      if (!this.makePattern && !this.initmove) {
+        return this.reverseMove(this.move)
+      }
+
+      return this.makePattern
     },
     getCtegoryIconName():string {
 
       return CONSTANTS.CATEGORY_ICON_NAMES[this.category]
     }
-  }
+  },
+  methods: {
+    reverseMove(move:string):string {
+      return move.replace(/\(/g, '').replace(/\)/g, '').split(' ').map(s => {
+        if (s.endsWith("'")) {
+          return s.replace("'", '')
+        }
+        return s+"'"
+      }).slice().reverse().join(' ')
+    },
+  },
 })
 </script>
