@@ -15,12 +15,64 @@
           router
           exact
         >
-          <v-list-item-action>
+          <v-list-item-icon>
             <v-icon>{{ item.icon }}</v-icon>
-          </v-list-item-action>
+          </v-list-item-icon>
           <v-list-item-content>
             <v-list-item-title v-text="item.title" />
           </v-list-item-content>
+        </v-list-item>
+      </v-list>
+
+      <v-divider class="mt-6"/>
+
+      <v-list>
+        <v-list-item>
+          <v-list-item-content>
+            <v-list-item-title>
+              <v-icon>mdi-vector-link</v-icon>
+              Reference Links
+            </v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+        <v-list-item
+          v-for="(link, i) in links"
+          :key="i"
+          :href="link.to"
+          router
+          exact
+          target="_blank"
+        >
+          <v-list-item-icon>
+            <v-icon>mdi-circle-medium</v-icon>
+          </v-list-item-icon>
+          <v-list-item-content>
+            <v-list-item-title v-text="link.title" />
+          </v-list-item-content>
+          <v-list-item-icon>
+            <v-icon>mdi-open-in-new</v-icon>
+          </v-list-item-icon>
+        </v-list-item>
+      </v-list>
+
+      <v-divider class="mt-6"/>
+
+      <v-list>
+        <v-list-item
+          href="https://github.com/CortYuming/speedcubing-cfop-method"
+          router
+          exact
+          target="_blank"
+        >
+          <v-list-item-icon>
+            <v-icon>mdi-github</v-icon>
+          </v-list-item-icon>
+          <v-list-item-title>
+            CortYuming/speedcubing-cfop-method
+          </v-list-item-title>
+          <v-list-item-icon>
+            <v-icon>mdi-open-in-new</v-icon>
+          </v-list-item-icon>
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
@@ -76,6 +128,16 @@ export default {
           icon: CONSTANTS.CATEGORY_ICON_NAMES.CROSS,
           title: 'CROSS',
           to: '?s=CROSS',
+        },
+      ],
+      links: [
+        {
+          title: 'AnimCubeJS',
+          to: 'https://cubing.github.io/AnimCubeJS/animcubejs.html',
+        },
+        {
+          title: 'J Perm - YouTube',
+          to: 'https://www.youtube.com/channel/UCqTVfT9JQqhA6_Hi_h_h97Q',
         },
       ],
       miniVariant: false,
