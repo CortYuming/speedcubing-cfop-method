@@ -92,56 +92,54 @@
 </template>
 
 <script lang="ts">
-  import { CONSTANTS } from '../constants'
+import { Component, Vue } from 'vue-property-decorator';
+import { CONSTANTS } from '../constants'
 
-export default {
-  name: 'DefaultLayout',
-  data() {
-    return {
-      title: 'Speedcubing CFOP Method',
-      clipped: false,
-      drawer: false,
-      fixed: false,
-      theme: false,
-      items: [
-        {
-          icon: CONSTANTS.CATEGORY_ICON_NAMES.ALL,
-          title: 'All',
-          to: '/',
-        },
-        {
-          icon: CONSTANTS.CATEGORY_ICON_NAMES.PLL,
-          title: 'PLL',
-          to: '?s=PLL',
-        },
-        {
-          icon: CONSTANTS.CATEGORY_ICON_NAMES.OLL,
-          title: 'OLL',
-          to: '?s=OLL',
-        },
-        {
-          icon: CONSTANTS.CATEGORY_ICON_NAMES.F2L,
-          title: 'F2L',
-          to: '?s=F2L',
-        },
-        {
-          icon: CONSTANTS.CATEGORY_ICON_NAMES.CROSS,
-          title: 'CROSS',
-          to: '?s=CROSS',
-        },
-      ],
-      links: [
-        {
-          title: 'AnimCubeJS',
-          to: 'https://cubing.github.io/AnimCubeJS/animcubejs.html',
-        },
-        {
-          title: 'J Perm - YouTube',
-          to: 'https://www.youtube.com/channel/UCqTVfT9JQqhA6_Hi_h_h97Q',
-        },
-      ],
-      miniVariant: false,
+@Component
+export default class DefaultComponent extends Vue {
+  name = 'DefaultLayout'
+    title =  'Speedcubing CFOP Method'
+    clipped =  false
+    drawer = false
+    fixed = false
+    theme = false
+    items = [
+      {
+        icon: CONSTANTS.CATEGORY_ICON_NAMES.ALL,
+        title: 'All',
+        to: '/',
+      },
+      {
+        icon: CONSTANTS.CATEGORY_ICON_NAMES.PLL,
+        title: 'PLL',
+        to: '?s=PLL',
+      },
+      {
+        icon: CONSTANTS.CATEGORY_ICON_NAMES.OLL,
+        title: 'OLL',
+        to: '?s=OLL',
+      },
+      {
+        icon: CONSTANTS.CATEGORY_ICON_NAMES.F2L,
+        title: 'F2L',
+        to: '?s=F2L',
+      },
+      {
+        icon: CONSTANTS.CATEGORY_ICON_NAMES.CROSS,
+        title: 'CROSS',
+        to: '?s=CROSS',
+      },
+    ]
+    links= [
+    {
+      title: 'AnimCubeJS',
+      to: 'https://cubing.github.io/AnimCubeJS/animcubejs.html',
+    },
+    {
+      title: 'J Perm - YouTube',
+      to: 'https://www.youtube.com/channel/UCqTVfT9JQqhA6_Hi_h_h97Q',
     }
-  },
+  ]
+  miniVariant = false
 }
 </script>
