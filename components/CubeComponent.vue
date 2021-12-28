@@ -61,18 +61,31 @@ export default class CubeComponent extends Vue {
 
   get replaceMoveHtml():string {
     let move:string = String(this.move)
-    const replaceStrongList:string[] = [
-      "(R U R' U')",
-    "(R U R')",
-    "(L' U' L U)",
-    "(L' U' L)",
-    ]
 
     move = move.replace('z', '__z')
 
-    replaceStrongList.forEach((word:string) => {
-      move = move.replace(word, `<strong class="red--text text--lighten-1">${word}</strong>`)
+    const fourMoveList:string[] = [
+      "(R U R' U')",
+      "(R U R')",
+      "(L' U' L U)",
+      "(L' U' L)",
+    ]
+    const fourMoveColor = 'red--text text--lighten-1'
+    fourMoveList.forEach((word:string) => {
+      move = move.replace(word, `<strong class="${fourMoveColor}">${word}</strong>`)
     })
+
+    const triggerList:string[] = [
+      "(U R U' R')",
+      "U (R U' R')",
+      "(U' L' U L)",
+      "U' (L' U L)",
+    ]
+    const triggerColor = 'light-blue--text text--accent-3'
+    triggerList.forEach((word:string) => {
+      move = move.replace(word, `<strong class="${triggerColor}">${word}</strong>`)
+    })
+
     return move
   }
 
