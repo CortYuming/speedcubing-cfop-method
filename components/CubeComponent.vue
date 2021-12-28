@@ -22,11 +22,11 @@
     </v-card-text>
     <v-card-subtitle>
       <!-- eslint-disable-next-line vue/no-v-html -->
-      <p class="grey--text text--darken-4" v-html="replaceMoveHtml"/>
+      <p class="grey--text text--darken-4 text-subtitle-1" v-html="replaceMoveHtml"/>
       <v-divider></v-divider>
       <p v-if="getMakePattern">
         make pattern <br/>
-        <span>
+        <span class="text-subtitle-1">
           {{ getMakePattern }}
         </span>
       </p>
