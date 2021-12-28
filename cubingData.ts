@@ -33,8 +33,17 @@ export const CUBING_DATA:string[] = [
   "OLL	26	R U2' R' U' R U' R'	(R U2' R' U' R U' R') *5	",
   "OLL	27	(R U R') U R U2 R'	((R U R') U R U2 R') *5	",
   // F2L
-  // F2L:Section 1A
-  // F2L:White Sticker Faces Side/Front
+  // Section 1A
+  // White Sticker Faces Up
+  "F2L	Up01	U2 (R U R') U (R U' R')		",
+  "F2L	Up02	y U2 (L' U' L) U' (L' U L)		",
+  "F2L	Up03	U (R U2 R') U (R U' R')		",
+  "F2L	Up04	y U' (L' U2 L) U' (L' U L)		",
+  "F2L	Up05	U (R U' R') U' (R U' R' U R U' R')		",
+  "F2L	Up06	y U' (L' U L) U (L' U L U' L' U L)		",
+  "F2L	Up07	(R U2 R') U' (R U R')		",
+  "F2L	Up08	y (L' U2 L) U (L' U' L)		",
+  // White Sticker Faces Side/Front:Stickers on the U face are different:
   "F2L	Side/Front:different:01	(R U R')		",
   "F2L	Side/Front:different:02	y (L' U' L) 		",
   "F2L	Side/Front:different:03	U' (R U R') U (R U R')		",
@@ -43,6 +52,14 @@ export const CUBING_DATA:string[] = [
   "F2L	Side/Front:different:06	y L U2 L2' U' L2 U' L'		",
   "F2L	Side/Front:different:07	U' (R U' R') U (R U R')		",
   "F2L	Side/Front:different:08	y U (L' U L) U' (L' U' L)		",
-  // "				",
+  // White Sticker Faces Side/Front:Stickers on the U face are the same:
+  "F2L	Side/Front:same:01	y U' (L' U L)		",
+  "F2L	Side/Front:same:02	U (R U' R')		",
+  "F2L	Side/Front:same:03	y U (L' U2 L) U2 (L' U L)		",
+  "F2L	Side/Front:same:04	U' (R U2 R') U2 (R U' R')		",
+  "F2L	Side/Front:same:05	U' (R U R') U2 (R U' R')		",
+  "F2L	Side/Front:same:06	y U (L' U' L) U2 (L' U L)		",
+  "F2L	Side/Front:same:07	M U (L F' L') U' M'		",
+  "F2L	Side/Front:same:08	y M U' (R' F R) U M'		",
   // replace: [("’", "'"),("'2", "2'")]
 ];
