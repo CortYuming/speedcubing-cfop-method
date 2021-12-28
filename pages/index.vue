@@ -66,6 +66,10 @@ export default class IndexComponent extends Vue {
   keywords = this.$route.query.s && String(this.$route.query.s) || ''
   cubingData = getCubingData(CUBING_DATA)
 
+  updated() {
+    this.keywords = this.$route.query.s && String(this.$route.query.s) || ''
+  }
+
   get filterCubingData(): Cubing[] {
     const _checkKeyword = (cubing:Cubing, key:keyof Cubing, keyword:string):boolean => {
       return String(cubing[key]).toLowerCase().includes(keyword.toLowerCase().trim())

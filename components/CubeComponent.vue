@@ -5,7 +5,7 @@
         <v-btn
           outlined
           x-small
-          :href="'?s='+category"
+          :to="'?s='+category"
         >
           <v-icon left small>{{ getCtegoryIconName }}</v-icon>
           {{ category }}
