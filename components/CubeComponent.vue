@@ -35,7 +35,7 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
+import { Component, Prop, Vue } from 'vue-property-decorator';
 
 import { CONSTANTS } from '../constants'
 
@@ -45,104 +45,85 @@ interface AnimCubeConf {
   doublespeed: number
 }
 
-export default Vue.extend({
-  props: {
-    category: {
-      type: String,
-      default: "",
-    },
-    title: {
-      type: String,
-      default: "",
-    },
-    move: {
-      type: String,
-      default: "",
-    },
-    makePattern: {
-      type: String,
-      default: "",
-    },
-    initmove: {
-      type: String,
-      default: "",
-    },
-    animCubeConf: {
-     type: Object,
-     default: ():AnimCubeConf => ({
-       // colorscheme: "wygbor", // U:w
-       colorscheme: "ywgbro", // U:y
-       hint: 5,
-       doublespeed: 10,
-     })
-    },
-  },
-  computed: {
-    replaceMoveHtml():string {
-      let move:string = String(this.move)
-      const replaceStrongList:string[] = [
-        "(R U R' U')",
-        "(R U R')",
-        "(L' U' L U)",
-        "(L' U' L)",
-      ]
+@Component
+export default class CubeComponent extends Vue {
+  @Prop({ type: String, default: "" }) readonly category!: string
+  @Prop({ type: String, default: "" }) readonly title!: string
+  @Prop({ type: String, default: "" }) readonly move!: string
+  @Prop({ type: String, default: "" }) readonly makePattern!: string
+  @Prop({ type: String, default: "" }) readonly initmove!: string
+  @Prop({ type: Object, default: ():AnimCubeConf => ({
+    // colorscheme: "wygbor", // U:w
+    colorscheme: "ywgbro", // U:y
+    hint: 5,
+    doublespeed: 10,
+  })}) readonly animCubeConf!: { [key: string]: string }
 
-      move = move.replace('z', '__z')
+  get replaceMoveHtml():string {
+    let move:string = String(this.move)
+    const replaceStrongList:string[] = [
+      "(R U R' U')",
+    "(R U R')",
+    "(L' U' L U)",
+    "(L' U' L)",
+    ]
 
-      replaceStrongList.forEach((word:string) => {
-        move = move.replace(word, `<strong class="red--text text--lighten-1">${word}</strong>`)
-      })
-      return move
-    },
-    getAnimCube3Data():string {
-      let move:string = this.move
-      let initmove:string = this.initmove
-      const replaceStrs: { [key: string]: string } = {
-        'z': '__y',
-        'y': '__z',
-        '__z': 'z',
-        '__y': 'y',
+    move = move.replace('z', '__z')
 
-      }
+    replaceStrongList.forEach((word:string) => {
+      move = move.replace(word, `<strong class="red--text text--lighten-1">${word}</strong>`)
+    })
+    return move
+  }
 
-      if (move.includes('z') || move.includes('y')) {
-        Object.keys(replaceStrs).forEach((k:string) => {
-          move = move.replace(k, replaceStrs[k])
-        })
-      }
+  get getAnimCube3Data():string {
+    let move:string = this.move
+    let initmove:string = this.initmove
+    const replaceStrs: { [key: string]: string } = {
+      'z': '__y',
+      'y': '__z',
+      '__z': 'z',
+      '__y': 'y',
 
-      if (!this.makePattern && !this.initmove) {
-        initmove = this.reverseMove(move)
-      } else if (initmove.includes('z') || initmove.includes('y')) {
-        Object.keys(replaceStrs).forEach(k => {
-          initmove = initmove.replace(k, replaceStrs[k])
-        })
-      }
-
-      const initrevmoveOrInitmove = this.initmove === "" ? 'initrevmove=#' : `initmove=${initmove}`
-      return `move=${move}&${initrevmoveOrInitmove }&colorscheme=${this.animCubeConf.colorscheme}&hint=${this.animCubeConf.hint}&doublespeed=${this.animCubeConf.doublespeed}`
-    },
-    getMakePattern():string {
-      if (!this.makePattern && !this.initmove) {
-        return this.reverseMove(this.move)
-      }
-
-      return this.makePattern
-    },
-    getCtegoryIconName():string {
-
-      return CONSTANTS.CATEGORY_ICON_NAMES[this.category]
     }
-  },
-  methods: {
-    reverseMove(move:string):string {
-      return move.replace(/\(/g, '').replace(/\)/g, '').split(' ').map(s => {
-        if (s.endsWith("'")) {
-          return s.replace("'", '')
-        }
-        return s+"'"
-      }).slice().reverse().join(' ')
-    },
-  },
-})
+
+    if (move.includes('z') || move.includes('y')) {
+      Object.keys(replaceStrs).forEach((k:string) => {
+        move = move.replace(k, replaceStrs[k])
+      })
+    }
+
+    if (!this.makePattern && !this.initmove) {
+      initmove = this.reverseMove(move)
+    } else if (initmove.includes('z') || initmove.includes('y')) {
+      Object.keys(replaceStrs).forEach(k => {
+        initmove = initmove.replace(k, replaceStrs[k])
+      })
+    }
+
+    const initrevmoveOrInitmove = this.initmove === "" ? 'initrevmove=#' : `initmove=${initmove}`
+    return `move=${move}&${initrevmoveOrInitmove }&colorscheme=${this.animCubeConf.colorscheme}&hint=${this.animCubeConf.hint}&doublespeed=${this.animCubeConf.doublespeed}`
+  }
+
+  get getMakePattern():string {
+    if (!this.makePattern && !this.initmove) {
+      return this.reverseMove(this.move)
+    }
+
+    return this.makePattern
+  }
+
+  get getCtegoryIconName():string {
+    return CONSTANTS.CATEGORY_ICON_NAMES[this.category]
+  }
+
+  reverseMove(move:string):string {
+    return move.replace(/\(/g, '').replace(/\)/g, '').split(' ').map(s => {
+      if (s.endsWith("'")) {
+        return s.replace("'", '')
+      }
+      return s+"'"
+    }).slice().reverse().join(' ')
+  }
+}
 </script>

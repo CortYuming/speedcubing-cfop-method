@@ -33,7 +33,7 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
+import { Component, Vue } from 'vue-property-decorator';
 import { CUBING_DATA } from '../cubingData'
 
 interface Cubing {
@@ -43,10 +43,6 @@ interface Cubing {
   move: string
   makePattern: string
   initmove: string
-}
-interface CubingData {
-  keywords: string
-  cubingData: Cubing[]
 }
 
 const getCubingData = (data: string[]): any =>  {
@@ -63,52 +59,49 @@ const getCubingData = (data: string[]): any =>  {
   })
 }
 
-export default Vue.extend({
-  name: 'TopPage',
-  data():CubingData {
-    return {
-      keywords: this.$route.query.s && String(this.$route.query.s) || '',
-      cubingData: getCubingData(CUBING_DATA)
+@Component
+export default class IndexComponent extends Vue {
+  name = 'TopPage'
+
+  keywords = this.$route.query.s && String(this.$route.query.s) || ''
+  cubingData = getCubingData(CUBING_DATA)
+
+  get filterCubingData(): Cubing[] {
+    const _checkKeyword = (cubing:Cubing, key:keyof Cubing, keyword:string):boolean => {
+      return String(cubing[key]).toLowerCase().includes(keyword.toLowerCase().trim())
     }
-  },
-  computed: {
-    filterCubingData(): Cubing[] {
-      const _checkKeyword = (cubing:Cubing, key:keyof Cubing, keyword:string):boolean => {
-        return String(cubing[key]).toLowerCase().includes(keyword.toLowerCase().trim())
-      }
-      const cubingData:Cubing[] =  [] ;
-      const keywords:string[] = this.$route.query.s ? String(this.$route.query.s).trim().split(' ') : [];
+    const cubingData:Cubing[] =  [] ;
+    const keywords:string[] = this.$route.query.s ? String(this.$route.query.s).trim().split(' ') : [];
 
-      if (!keywords.length) {
-        return this.cubingData;
-      }
+    if (!keywords.length) {
+      return this.cubingData;
+    }
 
-      this.cubingData.forEach(cubing => {
-        const isHitList = []
-        keywords.forEach(keyword => {
-          if (_checkKeyword(cubing, 'category', keyword) ||  _checkKeyword(cubing, 'title', keyword)) {
-            isHitList.push(true)
-          }
-          if (keywords.length === isHitList.length) {
-            cubingData.push(cubing)
-          }
-        })
+    this.cubingData.forEach((cubing:Cubing) => {
+      const isHitList = []
+      keywords.forEach(keyword => {
+        if (_checkKeyword(cubing, 'category', keyword) ||  _checkKeyword(cubing, 'title', keyword)) {
+          isHitList.push(true)
+        }
+        if (keywords.length === isHitList.length) {
+          cubingData.push(cubing)
+        }
       })
+    })
 
-      return cubingData;
-    },
-  },
-  methods: {
-    search() {
-      if (!this.keywords || (this.keywords && !String(this.keywords).trim())) {
-        this.$router.push({path: '/'})
-        return
-      }
-      this.$router.push({path: "?s="+this.keywords})
-    },
-    clearSearch() {
+    return cubingData;
+  }
+
+  search() {
+    if (!this.keywords || (this.keywords && !String(this.keywords).trim())) {
       this.$router.push({path: '/'})
-    },
-  },
-})
+      return
+    }
+    this.$router.push({path: "?s="+this.keywords})
+  }
+
+  clearSearch() {
+    this.$router.push({path: '/'})
+  }
+}
 </script>
