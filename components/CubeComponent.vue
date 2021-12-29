@@ -22,7 +22,11 @@
     </v-card-text>
     <v-card-subtitle>
       <!-- eslint-disable-next-line vue/no-v-html -->
-      <p class="grey--text text--darken-4 text-subtitle-1" v-html="replaceMoveHtml"/>
+      <p
+        class="grey--text text--darken-4 font-weight-regular"
+        :class="{'text-h6': $vuetify.breakpoint. smAndDown, 'text-subtitle-1': $vuetify.breakpoint. mdAndUp}"
+        v-html="replaceMoveHtml"
+      />
       <v-divider></v-divider>
       <p v-if="getMakePattern">
         make pattern <br/>
