@@ -23,8 +23,7 @@
     <v-card-subtitle>
       <!-- eslint-disable-next-line vue/no-v-html -->
       <p
-        class="grey--text text--darken-4 font-weight-regular"
-        :class="{'text-h6': $vuetify.breakpoint. smAndDown, 'text-subtitle-1': $vuetify.breakpoint. mdAndUp}"
+        class="grey--text text--darken-4 font-weight-regular text-h6 text-sm-h6 text-md-h6 text-lg-subtitle-1"
         v-html="replaceMoveHtml"
       />
       <v-divider></v-divider>
