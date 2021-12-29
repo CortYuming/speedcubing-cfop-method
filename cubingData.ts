@@ -27,9 +27,9 @@ export const CUBING_DATA:string[] = [
   "OLL	Dot to Cross	F (R U R' U') F' f (R U R' U') f'	F (R U R' U') F' f (R U R' U') f'	F (R U R' U') F' f (R U R' U') f'",
   "OLL	21	(R U R') U R U' R' U R U2' R'	(R U R') U R U' R' U R U2' R'	",
   "OLL	22	R U2' (R2' U' R2 U' R2') U2' R	R U2' (R2' U' R2 U' R2') U2' R	",
-  "OLL	23	R2 D R' U2 R D' R' U2 R'	R2 D R' U2 R D' R' U2 R'	",
+  "OLL	23	R2 D R' U2 R D' R' U2 R'	(R2 D R' U2 R D' R' U2 R') *2	",
   "OLL	24	(r U R' U') (r' F R F')	((r U R' U') (r' F R F')) *2	",
-  "OLL	25	(F R' F' r) (U R U' r')	(F R' F' r) (U R U' r')	",
+  "OLL	25	(F R' F' r) (U R U' r')	((F R' F' r) (U R U' r')) *2	",
   "OLL	26	R U2' R' U' R U' R'	(R U2' R' U' R U' R') *5	",
   "OLL	27	(R U R') U R U2 R'	((R U R') U R U2 R') *5	",
   // F2L
