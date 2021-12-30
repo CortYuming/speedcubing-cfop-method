@@ -33,7 +33,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
+import { Component, Watch, Vue } from 'vue-property-decorator';
 import { CUBING_DATA } from '../cubingData'
 
 interface Cubing {
@@ -63,10 +63,12 @@ const getCubingData = (data: string[]): any =>  {
 export default class IndexComponent extends Vue {
   name = 'TopPage'
 
-  keywords = this.$route.query.s && String(this.$route.query.s) || ''
+  keywords = ''
   cubingData = getCubingData(CUBING_DATA)
 
-  updated() {
+  @Watch('$route', { immediate: true })
+  onChangeRoutee() {
+    console.info('onChangeRoutee!!!')
     this.keywords = this.$route.query.s && String(this.$route.query.s) || ''
   }
 
