@@ -2,14 +2,15 @@
   <v-card height="100%">
     <v-card-text class="pb-sm-1">
       <div class="ext-subtitle-1">
-        <v-btn
+        <v-chip
           outlined
-          x-small
+          small
+          active-class="yellow--text text--darken-3"
           :to="'?s='+category"
         >
-          <v-icon left small>{{ getCtegoryIconName }}</v-icon>
+          <v-icon left x-small>{{ getCtegoryIconName }}</v-icon>
           {{ category }}
-        </v-btn>
+        </v-chip>
       </div>
     </v-card-text>
     <v-card-title class="headline font-weight-black pt-sm-1">
