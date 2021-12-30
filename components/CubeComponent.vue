@@ -67,26 +67,26 @@ export default class CubeComponent extends Vue {
 
     move = move.replace('z', '__z')
 
-    const fourMoveList:string[] = [
-      "(R U R' U')",
-      "(R U R')",
-      "(L' U' L U)",
-      "(L' U' L)",
+    const fourMoveREPatterns:string[] = [
+      "(\\(R U R' U'\\))",
+      "(\\(R U R'\\))",
+      "(\\(L' U' L U\\))",
+      "(\\(L' U' L\\))",
     ]
     const fourMoveColor = 'red--text text--lighten-1'
-    fourMoveList.forEach((word:string) => {
-      move = move.replace(word, `<strong class="${fourMoveColor}">${word}</strong>`)
+    fourMoveREPatterns.forEach((word:string) => {
+      move = move.replace(new RegExp(word, 'g'), `<strong class="${fourMoveColor}">$1</strong>`)
     })
 
-    const triggerList:string[] = [
-      "(U R U' R')",
-      "U (R U' R')",
-      "(U' L' U L)",
-      "U' (L' U L)",
+    const triggerREPatterns:string[] = [
+      "(\\(U R U' R'\\))",
+      "(U \\(R U' R'\\))",
+      "(\\(U' L' U L\\))",
+      "(U' \\(L' U L\\))",
     ]
     const triggerColor = 'light-blue--text text--accent-3'
-    triggerList.forEach((word:string) => {
-      move = move.replace(word, `<strong class="${triggerColor}">${word}</strong>`)
+    triggerREPatterns.forEach((word:string) => {
+      move = move.replace(new RegExp(word, 'g'), `<strong class="${triggerColor}">$1</strong>`)
     })
 
     return move
