@@ -16,6 +16,7 @@ export const CUBING_DATA:string[] = [
   "PLL	Ra	(R U' R' U') (R U R D) (R' U' R D') (R' U2' R') U'	(R U' R' U') (R U R D) (R' U' R D') (R' U2' R') U'	",
   "PLL	Jb	(R U R') F' (R U R' U') R' F R2 U' R' U'	(R U R') F' (R U R' U') R' F R2 U' R' U'	",
   "PLL	Ja	x (R2 F R F') R U2 (r' U r) U2 x'	x (R2 F R F') R U2 (r' U r) U2 x'	",
+  "PLL	Ja	(L' U' L) F (L' U' L U) L F' L2' U L U	(L' U' L) F (L' U' L U) L F' L2' U L U	",
   "PLL	Y	F (R U' R' U') (R U R') F' (R U R' U') (R' F R F')	F (R U' R' U') (R U R') F' (R U R' U') (R' F R F')	",
   "PLL	Gd	(R U R') (U' D) R2 U' R U' R' U R' U R2 D'	((R U R') (U' D) R2 U' R U' R' U R' U R2 D)*3	",
   "PLL	Gc	R2 U' R U' R U R' U R2 (D' U) (R U' R') D	(R2 U' R U' R U R' U R2 (D' U) (R U' R') D) *3	",
