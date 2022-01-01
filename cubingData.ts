@@ -85,5 +85,51 @@ export const CUBING_DATA:string[] = [
   "F2L	1C:Edge03	(R U' R') (F' L' U2 L F)		",
   "F2L	1C:Edge04	y (L' U L) (F R U2' R' F')		",
   "F2L	1C:Edge05	R2' U2' F R2 F' U2' R' U R'		",
+  // Section 2A
+  // Edge is in the wrong slot.
+  "F2L	2A:Advanced:Up01	U' R' U R2 U' R'		",
+  "F2L	2A:Advanced:Up02	y U L U' L2' U L		",
+  "F2L	2A:Advanced:Up03	U2 (R' U R) U' (S R S')		",
+  "F2L	2A:Advanced:Up04	y U2 (L U' L') U (S' L' S)		",
+  "F2L	2A:Advanced:Up05	U2 L2' u L2 u' L2'		",
+  "F2L	2A:Advanced:Up06	L F' U F L'		",
+  // White Sticker Faces Side/Front
+  "F2L	2A:Advanced:Side/Front01	R' U' R2 U R'		",
+  "F2L	2A:Advanced:Side/Front02	y L U L2' U' L		",
+  "F2L	2A:Advanced:Side/Front03	F D R D' F'		",
+  "F2L	2A:Advanced:Side/Front04	y F' D' L' D F		",
+  "F2L	2A:Advanced:Side/Front05	U' (L' U' L) (R U' R')		",
+  "F2L	2A:Advanced:Side/Front06	U (R U R') (L' U L)		",
+  "F2L	2A:Advanced:Side/Front07	(F U2 F') (R U R')		",
+  "F2L	2A:Advanced:Side/Front08	y (F' U2 F) (L' U' L)		",
+  "F2L	2A:Advanced:Side/Front09	U (R U R') (L U L')		",
+  "F2L	2A:Advanced:Side/Front10	y U' (L' U' L) (R' U' R)		",
+  "F2L	2A:Advanced:Side/Front11	U2 F' (L U L') F		",
+  "F2L	2A:Advanced:Side/Front12	y U2' F (R' U' R) F'		",
+  // Section 2B
+  // Corner is in the wrong slot.
+  "F2L	2B:Advanced:Right Slot01	U (R U' R') (L' U L)		",
+  "F2L	2B:Advanced:Right Slot02	y (L' U2 L) U' (L U L')		",
+  "F2L	2B:Advanced:Right Slot03	U2 (R U' R') U (L' U' L)		",
+  "F2L	2B:Advanced:Right Slot04	y U' L' U' L2 U2 L'		",
+  "F2L	2B:Advanced:Right Slot05	(R U R') U' (L' U L)		",
+  "F2L	2B:Advanced:Right Slot06	U' (R U R') (F U F')		",
+  // Corner In The Left Slot
+  "F2L	2B:Advanced:Left Slot01	y U' (L' U L) (R U' R')		",
+  "F2L	2B:Advanced:Left Slot02	(R U2 R') U (R' U' R)		",
+  "F2L	2B:Advanced:Left Slot03	(F R' F' R) U (R' U2 R)		",
+  "F2L	2B:Advanced:Left Slot04	U R U R2' U2 R		",
+  "F2L	2B:Advanced:Left Slot05	(S R' S')		",
+  "F2L	2B:Advanced:Left Slot06	U (F U' F') (R' U' R)		",
+  // Corner In The Opposite Slot
+  "F2L	2B:Advanced:Opposite Slot01	U' (F' U F) (L U2 L')		",
+  "F2L	2B:Advanced:Opposite Slot02	U (R U' R') U (f' L f)		",
+  "F2L	2B:Advanced:Opposite Slot03	(R U' R') (L U2 L')		",
+  "F2L	2B:Advanced:Opposite Slot04	(R U R') (f' L f)		",
+  "F2L	2B:Advanced:Opposite Slot05	(R U' R') U (L U L')		",
+  "F2L	2B:Advanced:Opposite Slot06	(R' F R F') (L U2 L')		",
+  // Section 3: Expert F2L
+  //Both pieces are in a slot (only the easy cases).
+
   // replace: [("’", "'"),("'2", "2'")]
 ];
