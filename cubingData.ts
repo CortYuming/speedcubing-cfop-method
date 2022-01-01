@@ -40,8 +40,10 @@ export const CUBING_DATA:string[] = [
   "F2L	1A:Up02	y U2 (L' U' L) U' (L' U L)		",
   "F2L	1A:Up03	U (R U2 R') U (R U' R')		",
   "F2L	1A:Up04	y U' (L' U2 L) U' (L' U L)		",
-  "F2L	1A:Up05	U (R U' R') U' (R U' R' U R U' R')		",
-  "F2L	1A:Up06	y U' (L' U L) U (L' U L U' L' U L)		",
+  "F2L	1A:Up05-01	U (R U' R') U' (R U' R' U R U' R')		",
+  "F2L	1A:Up05-02	U (F R' F' R) U (R U R')		",
+  "F2L	1A:Up06-01	y U' (L' U L) U (L' U L U' L' U L)		",
+  "F2L	1A:Up06-02	U' R U (R2' F R F') (R U' R')		",
   "F2L	1A:Up07	(R U2 R') U' (R U R')		",
   "F2L	1A:Up08	y (L' U2 L) U (L' U' L)		",
   // White Sticker Faces Side/Front:Stickers on the U face are different:
