@@ -34,7 +34,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Watch, Vue } from 'vue-property-decorator';
+import { Component, Watch, Vue } from 'nuxt-property-decorator';
 import { CUBING_DATA } from '../cubingData'
 
 interface Cubing {
