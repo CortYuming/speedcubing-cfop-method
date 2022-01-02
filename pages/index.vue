@@ -9,6 +9,7 @@
               placeholder="Search"
               hide-details="auto"
               clearable
+              :messages="`${filterCubingData.length}/${cubing_data_length}`"
               @keyup.enter="search"
               @click:clear="clearSearch"
             ></v-text-field>
@@ -65,6 +66,7 @@ export default class IndexComponent extends Vue {
 
   keywords = ''
   cubingData = getCubingData(CUBING_DATA)
+  cubing_data_length = CUBING_DATA.length
 
   @Watch('$route', { immediate: true })
   onChangeRoutee() {
