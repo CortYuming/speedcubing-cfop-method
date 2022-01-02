@@ -132,6 +132,24 @@ export const CUBING_DATA:string[] = [
   "F2L	2B:Advanced:Opposite Slot06	(R' F R F') (L U2 L')		",
   // Section 3: Expert F2L
   //Both pieces are in a slot (only the easy cases).
-
-  // replace: [("’", "'"),("'2", "2'")]
+  "F2L	3:Corner Is Solved01	R2 U' R2' U R2		",
+  "F2L	3:Corner Is Solved02	f' R' U R f		",
+  "F2L	3:Corner Is Solved03	y L2' U L2 U' L2'		",
+  "F2L	3:Corner Is Solved04	y f L U' L' f'		",
+  "F2L	3:Corner Is Solved05	L2' u' L2 u L2'		",
+  "F2L	3:Corner Is Solved06	(L' u' L) U (L' u L)		",
+  // Pair In The Wrong Slot
+ "F2L	3:Pair In The Wrong Slot01	R' F R2 U' R2' F' R		",
+  "F2L	3:Pair In The Wrong Slot02	y L F' L2' U L2 F L'		",
+  "F2L	3:Pair In The Wrong Slot03	R (L U2 L') R'		",
+  // Flipped Edge & Corner In Adjacent Slot
+  "F2L	3:Flipped Edge & Corner In Adjacent Slot01	L F2' L' F U' F		",
+  "F2L	3:Flipped Edge & Corner In Adjacent Slot02	y R' F2 R F' U F'		",
+  "F2L	3:Flipped Edge & Corner In Adjacent Slot03	(R' F R U' F') (R U' R')		",
+  "F2L	3:Flipped Edge & Corner In Adjacent Slot04	y (L F' L' U F) (L' U L)		",
+  "F2L	3:Flipped Edge & Corner In Adjacent Slot05	(L' U L) (M' U R U' r') (R U' R')		",
+  "F2L	3:Flipped Edge & Corner In Adjacent Slot06	y (R U' R') (M' U' L' U l) (L' U L)		",
+  // Other Easy Cases
+  "F2L	3:Other Easy Cases01	(R' F R U' F') U (R U' R')		",
+  "F2L	3:Other Easy Cases02	y (L F' L' U F) U' (L' U L)		",
 ];
