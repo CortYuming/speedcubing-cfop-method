@@ -60,10 +60,12 @@ const getCubingData = (data: string[]): any =>  {
   })
 }
 
-@Component
+@Component({
+  head: () => ({
+    title: 'Top Page',
+  }),
+})
 export default class IndexComponent extends Vue {
-  name = 'TopPage'
-
   keywords = ''
   cubingData = getCubingData(CUBING_DATA)
   cubing_data_length = CUBING_DATA.length

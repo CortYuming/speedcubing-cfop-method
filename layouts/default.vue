@@ -78,7 +78,7 @@
     </v-navigation-drawer>
     <v-app-bar :clipped-left="clipped" fixed app>
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
-      <v-toolbar-title v-text="title" />
+      <v-toolbar-title v-text="name" />
     </v-app-bar>
     <v-main>
       <v-container>
@@ -97,8 +97,7 @@ import { CONSTANTS } from '../constants'
 
 @Component
 export default class DefaultComponent extends Vue {
-  name = 'DefaultLayout'
-    title =  'Speedcubing CFOP Method'
+  name = 'Speedcubing CFOP Method'
     clipped =  false
     drawer = false
     fixed = false
@@ -131,15 +130,15 @@ export default class DefaultComponent extends Vue {
       },
     ]
     links= [
-    {
-      title: 'AnimCubeJS',
-      to: 'https://cubing.github.io/AnimCubeJS/animcubejs.html',
-    },
-    {
-      title: 'J Perm - YouTube',
-      to: 'https://www.youtube.com/channel/UCqTVfT9JQqhA6_Hi_h_h97Q',
-    }
-  ]
+      {
+        title: 'AnimCubeJS',
+        to: 'https://cubing.github.io/AnimCubeJS/animcubejs.html',
+      },
+      {
+        title: 'J Perm - YouTube',
+        to: 'https://www.youtube.com/channel/UCqTVfT9JQqhA6_Hi_h_h97Q',
+      }
+    ]
   miniVariant = false
 }
 </script>
