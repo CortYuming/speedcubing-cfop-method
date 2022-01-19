@@ -1,5 +1,7 @@
 import colors from 'vuetify/es5/util/colors'
 
+const PASH_PREFIX = '/speedcubing-cfop-method/'
+
 export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
   ssr: false,
@@ -17,7 +19,7 @@ export default {
       { hid: 'description', name: 'description', content: '' },
       { name: 'format-detection', content: 'telephone=no' },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    link: [{ rel: 'icon', type: 'image/x-icon', href: `${PASH_PREFIX}favicon.ico` }],
     script: [
       {
         type: 'text/javascript',
@@ -67,7 +69,7 @@ export default {
   },
 
   router: {
-    base: '/speedcubing-cfop-method/'
+    base: PASH_PREFIX,
   },
 
   generate: {
