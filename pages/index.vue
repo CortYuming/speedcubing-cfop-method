@@ -72,7 +72,6 @@ export default class IndexComponent extends Vue {
 
   @Watch('$route', { immediate: true })
   onChangeRoutee() {
-    console.info('onChangeRoutee!!!')
     this.keywords = this.$route.query.s && String(this.$route.query.s) || ''
   }
 
