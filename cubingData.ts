@@ -131,7 +131,7 @@ export const CUBING_DATA:string[] = [
   "F2L	2B:Advanced:Opposite Slot05	(R U' R') U (L U L')		",
   "F2L	2B:Advanced:Opposite Slot06	(R' F R F') (L U2 L')		",
   // Section 3: Expert F2L
-  //Both pieces are in a slot (only the easy cases).
+  // Both pieces are in a slot (only the easy cases).
   "F2L	3:Corner Is Solved01	R2 U' R2' U R2		",
   "F2L	3:Corner Is Solved02	f' R' U R f		",
   "F2L	3:Corner Is Solved03	y L2' U L2 U' L2'		",
@@ -152,4 +152,10 @@ export const CUBING_DATA:string[] = [
   // Other Easy Cases
   "F2L	3:Other Easy Cases01	(R' F R U' F') U (R U' R')		",
   "F2L	3:Other Easy Cases02	y (L F' L' U F) U' (L' U L)		",
+  // CROSS
+  "CROSS	U to D	F2		",
+  "CROSS	U right edge to D	R' F		",
+  "CROSS	U left edge to D	L F'		",
+  "CROSS	Middle right edge to D	F		",
+  "CROSS	Middle left edge to D	F'		",
 ];
