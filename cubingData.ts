@@ -23,9 +23,9 @@ export const CUBING_DATA:string[] = [
   "PLL	Gb	(R' U' R) (U D') R2 U R' U R U' R U' R2 D	((R' U' R) (U D') R2 U R' U R U' R U' R2 D) *3	",
   "PLL	Ga	R2 U R' U R' U' R U' R2 (D U') (R' U R) D'	(R2 U R' U R' U' R U' R2 (D U') (R' U R) D) *3	",
   // OLL
-  "OLL	Line to Cross	F (R U R' U') F'	(F (R U R' U') F') *2	F (R U R' U') F' F (R U R' U') F'",
-  "OLL	L-shape to Cross	f (R U R' U') f'	(f (R U R' U') f') *2	f (R U R' U') f' f (R U R' U') f'",
-  "OLL	Dot to Cross	F (R U R' U') F' f (R U R' U') f'	F (R U R' U') F' f (R U R' U') f'	F (R U R' U') F' f (R U R' U') f'",
+  "OLL	Line to †	F (R U R' U') F'	(F (R U R' U') F') *2	F (R U R' U') F' F (R U R' U') F'",
+  "OLL	L-shape to †	f (R U R' U') f'	(f (R U R' U') f') *2	f (R U R' U') f' f (R U R' U') f'",
+  "OLL	Dot to †	F (R U R' U') F' f (R U R' U') f'	F (R U R' U') F' f (R U R' U') f'	F (R U R' U') F' f (R U R' U') f'",
   "OLL	21	(R U R') U R U' R' U R U2' R'	(R U R') U R U' R' U R U2' R'	",
   "OLL	22	R U2' (R2' U' R2 U' R2') U2' R	R U2' (R2' U' R2 U' R2') U2' R	",
   "OLL	23	R2 D R' U2 R D' R' U2 R'	(R2 D R' U2 R D' R' U2 R') *2	",
