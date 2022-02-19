@@ -1,5 +1,5 @@
 <template>
-  <v-card height="100%">
+  <v-card :id="title" height="100%">
     <v-card-text class="pb-sm-1">
       <div class="ext-subtitle-1">
         <v-chip
@@ -14,7 +14,7 @@
       </div>
     </v-card-text>
     <v-card-title class="headline font-weight-black pt-sm-1">
-      {{ title}}
+      {{ title }}
     </v-card-title>
     <v-card-text class="pb-sm-1">
       <div class="mx-auto" style="width:220px; height:240px">
