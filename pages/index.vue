@@ -62,7 +62,7 @@ const getCubingData = (data: string[]): any =>  {
 
 @Component({
   head: () => ({
-    title: 'Top Page',
+    title: 'Home',
   }),
 })
 export default class IndexComponent extends Vue {
