@@ -20,6 +20,19 @@
           </v-list-item-icon>
           <v-list-item-content>
             <v-list-item-title v-text="item.title" />
+            <v-list>
+              <v-list-item
+                v-for="(subItem, i) in item.subItems"
+                :key="i"
+                :to="subItem.to"
+                router
+                exact
+              >
+                <v-list-item-content>
+                  <v-list-item-title v-text="subItem.title" />
+                </v-list-item-content>
+              </v-list-item>
+            </v-list>
           </v-list-item-content>
         </v-list-item>
       </v-list>
@@ -122,6 +135,68 @@ export default class DefaultComponent extends Vue {
         icon: CONSTANTS.CATEGORY_ICON_NAMES.F2L,
         title: 'F2L',
         to: '?s=F2L',
+        subItems: [
+          {
+            title: 'White Sticker Faces Up',
+            to: '?s=F2L White Sticker Faces Up',
+          },
+          {
+            title: 'White Sticker Faces Side/Front:different',
+            to: '?s=F2L White Sticker Faces Side/Front:different',
+          },
+          {
+            title: 'White Sticker Faces Side/Front:same',
+            to: '?s=F2L White Sticker Faces Side/Front:same',
+          },
+          {
+            title: 'Edge in the slot',
+            to: '?s=F2L Edge in the slot',
+          },
+          {
+            title: 'Corner in the slot',
+            to: '?s=F2L Corner in the slot',
+          },
+          {
+            title: 'Both pieces are in the correct slot',
+            to: '?s=F2L Both pieces are in the correct slot',
+          },
+          {
+            title: 'White Sticker Faces Up',
+            to: '?s=F2L White Sticker Faces Up',
+          },
+          {
+            title: 'White Sticker Faces Side/Front',
+            to: '?s=F2L White Sticker Faces Side/Front',
+          },
+          {
+            title: 'Corner In The Right Slot',
+            to: '?s=F2L Corner In The Right Slot',
+          },
+          {
+            title: 'Corner In The Left Slot',
+            to: '?s=F2L Corner In The Left Slot',
+          },
+          {
+            title: 'Corner In The Opposite Slot',
+            to: '?s=F2L Corner In The Opposite Slot',
+          },
+          {
+            title: 'Corner Is Solved',
+            to: '?s=F2L Corner Is Solved',
+          },
+          {
+            title: 'Pair In The Wrong Slot',
+            to: '?s=F2L Pair In The Wrong Slot',
+          },
+          {
+            title: 'Flipped Edge & Corner In Adjacent Slot',
+            to: '?s=F2L Flipped Edge & Corner In Adjacent Slot',
+          },
+          {
+            title: 'Other Easy Cases',
+            to: '?s=F2L Other Easy Cases',
+          },
+        ],
       },
       {
         icon: CONSTANTS.CATEGORY_ICON_NAMES.CROSS,
