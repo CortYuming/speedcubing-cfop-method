@@ -139,7 +139,7 @@ export const CUBING_DATA:string[] = [
   "F2L	3:Corner Is Solved05	L2' u' L2 u L2'		",
   "F2L	3:Corner Is Solved06	(L' u' L) U (L' u L)		",
   // Pair In The Wrong Slot
- "F2L	3:Pair In The Wrong Slot01	R' F R2 U' R2' F' R		",
+  "F2L	3:Pair In The Wrong Slot01	R' F R2 U' R2' F' R		",
   "F2L	3:Pair In The Wrong Slot02	y L F' L2' U L2 F L'		",
   "F2L	3:Pair In The Wrong Slot03	R (L U2 L') R'		",
   // Flipped Edge & Corner In Adjacent Slot
