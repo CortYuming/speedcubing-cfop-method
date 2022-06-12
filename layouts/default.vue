@@ -137,15 +137,15 @@ export default class DefaultComponent extends Vue {
         to: '?s=F2L',
         subItems: [
           {
-            title: 'White Sticker Faces Up',
+            title: 'Up',
             to: '?s=F2L White Sticker Faces Up',
           },
           {
-            title: 'White Sticker Faces Side/Front:different',
+            title: 'Side/Front:different',
             to: '?s=F2L White Sticker Faces Side/Front:different',
           },
           {
-            title: 'White Sticker Faces Side/Front:same',
+            title: 'Side/Front:same',
             to: '?s=F2L White Sticker Faces Side/Front:same',
           },
           {
@@ -161,11 +161,11 @@ export default class DefaultComponent extends Vue {
             to: '?s=F2L Both pieces are in the correct slot',
           },
           {
-            title: 'White Sticker Faces Up',
+            title: 'Faces Up',
             to: '?s=F2L White Sticker Faces Up',
           },
           {
-            title: 'White Sticker Faces Side/Front',
+            title: 'Side/Front',
             to: '?s=F2L White Sticker Faces Side/Front',
           },
           {
