@@ -71,7 +71,7 @@ export const CUBING_DATA:string[] = [
   "F2L	1B:Edge in the slot02	y U' (L' U' L) U2 (L' U' L)		",
   "F2L	1B:Edge in the slot03	U (F' U' F) U' (R U R')		",
   "F2L	1B:Edge in the slot04	y U' (F U F') U (L' U' L)		",
-  "F2L	1B:Edge in the slot05	(U R U' R')3		",
+  "F2L	1B:Edge in the slot05	(U R U' R')		",
   "F2L	1B:Edge in the slot06	U' (R' F R F') (R U' R')		",
   // Corner in the slot
   "F2L	1B:Corner in the slot01	(R U R') U' (R U R')		",
